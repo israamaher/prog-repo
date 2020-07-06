@@ -6,7 +6,6 @@ using namespace std;
 
 void linkedList::append(int val)
 {
-	
 	Node* newNode = new Node(val);
 	if (head == nullptr)
 	{
@@ -15,14 +14,14 @@ void linkedList::append(int val)
 	else
 	{
 		Node* currentNode = head;
-		while (currentNode != nullptr)
+		while (currentNode->next != nullptr)
 		{
 			currentNode = currentNode->next;
 		}
-		currentNode = newNode;
+		currentNode->next = newNode;
 	}
+
 	size++;
-	
 }
 
 

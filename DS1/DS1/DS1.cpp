@@ -11,6 +11,7 @@ int main()
     list.append(7);
     list.append(0);
     list.append(9);
+    list.insert(3, 6);
     
     list.print();
    
