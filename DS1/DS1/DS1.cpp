@@ -8,6 +8,12 @@ using namespace std;
 int main()
 {
     linkedList list;
+    list.append(7);
+    list.append(0);
+    list.append(9);
+    
+    list.print();
+   
 }
 
 // 

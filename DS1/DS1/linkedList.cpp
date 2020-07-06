@@ -1,8 +1,12 @@
 
 #include "linkedList.h"
+#include <iostream>
+#include <assert.h>
+using namespace std;
 
 void linkedList::append(int val)
 {
+	
 	Node* newNode = new Node(val);
 	if (head == nullptr)
 	{
@@ -18,7 +22,10 @@ void linkedList::append(int val)
 		currentNode = newNode;
 	}
 	size++;
+	
 }
+
+
 
 void linkedList::print()
 {
@@ -28,6 +35,32 @@ void linkedList::print()
 		cout << currentNode->value <<endl;
 		currentNode = currentNode->next;
 	}
+}
+
+
+void linkedList::insert(int idx, int val)
+{
+		assert(idx >= 0 && idx <= size);
+		Node* newNode = new Node(val);
+
+		if (idx == 0)
+		{
+			newNode->next = head;
+			head = newNode;
+		}
+		else
+		{
+			Node* currentNode = head;
+			int i = 0;
+			while (i < idx - 1)
+			{
+				currentNode = currentNode->next;
+				i++;
+			}
+			newNode->next = currentNode->next;
+			currentNode->next = newNode;
+		}
+		size++;
 }
 
 void linkedList::removeAt(int idx)
