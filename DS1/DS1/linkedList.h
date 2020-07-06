@@ -11,7 +11,7 @@ private:
 public:
 	void append(int val);
 	void print();
-	void removeAt(int val);
+	void removeAt(int idx);
 	linkedList();
 	~linkedList();
 };

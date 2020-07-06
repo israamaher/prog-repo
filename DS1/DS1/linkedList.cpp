@@ -30,18 +30,34 @@ void linkedList::print()
 	}
 }
 
-void linkedList::removeAt(int val)
+void linkedList::removeAt(int idx)
 {
-	Node* currentNode = head;
-	while (currentNode != nullptr)
+	assert(idx > 0 && idx < size);
+	if (idx == 0)
 	{
-		if (currentNode->value == val)
-		{
-			Node* lastNode = currentNode-1;
-			cout << lastNode;
-
-		}
+	Node* currentNode = head->next;
+	delete head;
+	head = currentNode;
 	}
+	else
+	{
+			Node* befor = head;
+
+		for (int i = 0; i < idx - 1; i++)
+		{
+			befor = befor->next;
+		}
+
+		Node* after= befor->next->next;
+		delete befor->next;
+		befor->next = after;
+		size--;
+
+	}
+
+
+
+
 
 }
 
